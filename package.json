@@ -1,0 +1,25 @@
+{
+  "name": "rideflow",
+  "version": "1.0.0",
+  "description": "RideFlow - Vehicle Rental Platform",
+  "private": true,
+  "scripts": {
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start",
+    "dev:backend": "cd backend && npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run start:frontend\" --names \"backend,frontend\" --prefix-colors \"bgBlue.bold,bgMagenta.bold\"",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "install:backend": "cd backend && npm install",
+    "install:frontend": "cd frontend && npm install"
+  },
+  "keywords": [
+    "vehicle-rental",
+    "ride-share",
+    "booking-system"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

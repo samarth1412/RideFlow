@@ -1,0 +1,228 @@
+/* Diagonal Wave Animations */
+@keyframes diagonal-wave-1 {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(12deg) scale(1);
+  }
+  50% { 
+    transform: translate(150px, -100px) rotate(12deg) scale(1.2);
+  }
+}
+
+@keyframes diagonal-wave-2 {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(-12deg) scale(1);
+  }
+  50% { 
+    transform: translate(-120px, 80px) rotate(-12deg) scale(1.15);
+  }
+}
+
+@keyframes diagonal-wave-3 {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(12deg) scale(1);
+  }
+  50% { 
+    transform: translate(100px, 120px) rotate(12deg) scale(1.25);
+  }
+}
+
+@keyframes diagonal-wave-4 {
+  0%, 100% { 
+    transform: translate(0, 0) rotate(-12deg) scale(1);
+  }
+  50% { 
+    transform: translate(-100px, -80px) rotate(-12deg) scale(1.1);
+  }
+}
+
+/* Wind Diagonal Animations */
+@keyframes wind-diagonal-1 {
+  0% { 
+    transform: translateX(-100%) rotate(-12deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% { 
+    transform: translateX(200%) rotate(-12deg);
+    opacity: 0;
+  }
+}
+
+@keyframes wind-diagonal-2 {
+  0% { 
+    transform: translateX(-100%) rotate(-12deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% { 
+    transform: translateX(200%) rotate(-12deg);
+    opacity: 0;
+  }
+}
+
+@keyframes wind-diagonal-3 {
+  0% { 
+    transform: translateX(-100%) rotate(-12deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% { 
+    transform: translateX(200%) rotate(-12deg);
+    opacity: 0;
+  }
+}
+
+@keyframes wind-diagonal-4 {
+  0% { 
+    transform: translateX(-100%) rotate(-12deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% { 
+    transform: translateX(200%) rotate(-12deg);
+    opacity: 0;
+  }
+}
+
+/* Particle Float Animations */
+@keyframes particle-float-1 {
+  0%, 100% { 
+    transform: translate(0, 0);
+    opacity: 0.4;
+  }
+  50% { 
+    transform: translate(100px, -80px);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-float-2 {
+  0%, 100% { 
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+  50% { 
+    transform: translate(-120px, 60px);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-float-3 {
+  0%, 100% { 
+    transform: translate(0, 0);
+    opacity: 0.4;
+  }
+  50% { 
+    transform: translate(90px, -70px);
+    opacity: 0;
+  }
+}
+
+@keyframes particle-float-4 {
+  0%, 100% { 
+    transform: translate(0, 0);
+    opacity: 0.3;
+  }
+  50% { 
+    transform: translate(-80px, 90px);
+    opacity: 0;
+  }
+}
+
+/* Speed Line Animations */
+@keyframes speed-line-1 {
+  0% { transform: translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateX(-400px); opacity: 0; }
+}
+
+@keyframes speed-line-2 {
+  0% { transform: translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateX(-350px); opacity: 0; }
+}
+
+@keyframes speed-line-3 {
+  0% { transform: translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateX(-450px); opacity: 0; }
+}
+
+/* Spin Slow Animation */
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Animation Classes */
+.animate-diagonal-wave-1 {
+  animation: diagonal-wave-1 16s ease-in-out infinite;
+}
+
+.animate-diagonal-wave-2 {
+  animation: diagonal-wave-2 14s ease-in-out infinite;
+}
+
+.animate-diagonal-wave-3 {
+  animation: diagonal-wave-3 18s ease-in-out infinite;
+}
+
+.animate-diagonal-wave-4 {
+  animation: diagonal-wave-4 20s ease-in-out infinite;
+}
+
+.animate-wind-diagonal-1 {
+  animation: wind-diagonal-1 7s ease-in-out infinite;
+}
+
+.animate-wind-diagonal-2 {
+  animation: wind-diagonal-2 9s ease-in-out infinite 2s;
+}
+
+.animate-wind-diagonal-3 {
+  animation: wind-diagonal-3 8s ease-in-out infinite 4s;
+}
+
+.animate-wind-diagonal-4 {
+  animation: wind-diagonal-4 10s ease-in-out infinite 6s;
+}
+
+.animate-particle-float-1 {
+  animation: particle-float-1 8s ease-in-out infinite;
+}
+
+.animate-particle-float-2 {
+  animation: particle-float-2 10s ease-in-out infinite 2s;
+}
+
+.animate-particle-float-3 {
+  animation: particle-float-3 9s ease-in-out infinite 4s;
+}
+
+.animate-particle-float-4 {
+  animation: particle-float-4 11s ease-in-out infinite 3s;
+}
+
+.animate-speed-line-1 {
+  animation: speed-line-1 2s ease-in-out infinite;
+}
+
+.animate-speed-line-2 {
+  animation: speed-line-2 2.5s ease-in-out infinite 0.3s;
+}
+
+.animate-speed-line-3 {
+  animation: speed-line-3 2.2s ease-in-out infinite 0.6s;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}

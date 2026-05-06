@@ -1,0 +1,15 @@
+\chapter{Design and Implementation}
+
+This chapter details the systematic approach employed in developing RideShareX, encompassing system architecture, technology stack selection, implementation methodology, and component specifications.
+
+\section{System Architecture}
+RideShareX employs a three-tier client-server architecture consisting of the presentation layer (React frontend), application layer (Express.js backend), and data layer (MongoDB). The frontend communicates with the backend via RESTful APIs; authentication is managed with Google OAuth 2.0 and JWT.
+
+\section{System Requirements}
+Functional requirements include Google OAuth login, JWT session management, vehicle listing and photo uploads (Multer), booking lifecycle management, and a demo payment system. Non-functional requirements include security (HTTPS in production, password hashing, validation), maintainability (MVC separation), and performance (indexing, pagination).
+
+\section{Database Design}
+Primary collections are Users, Vehicles, Bookings, and Payments. Each schema uses Mongoose validation and ObjectId references to establish relationships.
+
+\section{Implementation Details}
+Authentication: Google OAuth flow with backend token issuance and 7-day JWT expiry. Vehicle listings: multi-step form with Multer for secure uploads. Booking management: state machine for booking lifecycle and conflict checking. Payment: demo payment simulation with fare breakdown and transaction records.

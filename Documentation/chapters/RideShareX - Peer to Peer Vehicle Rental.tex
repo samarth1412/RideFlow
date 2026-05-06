@@ -1,0 +1,253 @@
+\documentclass[aspectratio=169]{beamer}
+
+% Theme and Color Setup
+\usetheme{Madrid}
+\usecolortheme{seahorse}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}[frame number]
+
+% Packages
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{booktabs}
+
+% Custom Colors
+\definecolor{primary}{RGB}{25, 60, 120}
+\definecolor{accent}{RGB}{0, 150, 136}
+\definecolor{cambridgeblue}{HTML}{81B29A}
+\definecolor{eerieblack}{HTML}{27231E}
+\definecolor{darkslate}{HTML}{3A5253}
+
+\setbeamercolor{title}{fg=primary}
+\setbeamercolor{frametitle}{fg=primary}
+\setbeamercolor{structure}{fg=accent}
+
+% Title Information
+\title{RideShareX}
+\subtitle{A Smart Vehicle Sharing Platform}
+\author{Utsav Adhikari\and Lujaw Dhunju \and Jatin Madikarmi}
+\institute{Department of Computer Science}
+\date{\today}
+
+\begin{document}
+
+%------------------------------------------------
+\begin{frame}
+    \titlepage
+\end{frame}
+%------------------------------------------------
+
+% ==============================
+% MEMBER 1 SECTION
+% ==============================
+
+\section{Introduction \& Concept}
+
+\begin{frame}{Problem Statement}
+\begin{itemize}
+    \item Lack of efficient vehicle sharing platforms
+    \item Difficulty in secure booking and verification
+    \item No structured approval workflow
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Motivation}
+\begin{itemize}
+    \item Increasing demand for shared mobility
+    \item Need for trust-based rental ecosystem
+    \item Digital transformation in transportation
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Objectives}
+\begin{itemize}
+    \item Secure authentication using Google OAuth
+    \item Structured booking and approval mechanism
+    \item Role-based access control
+    \item Scalable and modular system design
+\end{itemize}
+\end{frame}
+
+\begin{frame}{System Overview}
+\begin{itemize}
+    \item Web-based vehicle sharing system
+    \item User and Admin roles
+    \item Booking lifecycle with payment simulation
+\end{itemize}
+\end{frame}
+
+\begin{frame}{High-Level Architecture}
+\begin{itemize}
+    \item Presentation Layer – React
+    \item Application Layer – Node.js \& Express
+    \item Data Layer – MongoDB \& Cloudinary
+\end{itemize}
+\end{frame}
+
+% ==============================
+% MEMBER 2 SECTION
+% ==============================
+
+\section{Architecture \& System Design}
+
+\begin{frame}{System Architecture}
+\framesubtitle{Three-Tier Client–Server Architecture}
+\begin{itemize}
+    \item \textbf{Presentation Layer}
+    \begin{itemize}
+        \item React frontend
+        \item Handles user interaction \& UI
+    \end{itemize}
+    \vspace{0.3cm}
+    \item \textbf{Application Layer}
+    \begin{itemize}
+        \item Node.js + Express.js backend
+        \item Business logic \& API handling
+    \end{itemize}
+    \vspace{0.3cm}
+    \item \textbf{Data Layer}
+    \begin{itemize}
+        \item MongoDB (Database)
+        \item Cloudinary (Image storage)
+    \end{itemize}
+\end{itemize}
+\vspace{0.3cm}
+\textcolor{cambridgeblue}{\textbf{Ensures modularity, scalability, and maintainability}}
+\end{frame}
+
+\begin{frame}{Major System Modules}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+    \textbf{Authentication Module}
+    \begin{itemize}
+        \item Google OAuth login
+        \item JWT generation \& authorization
+    \end{itemize}
+    \vspace{0.2cm}
+    \textbf{User Management Module}
+    \begin{itemize}
+        \item Profile management
+        \item Verification handling
+    \end{itemize}
+    \vspace{0.2cm}
+    \textbf{Vehicle Management Module}
+    \begin{itemize}
+        \item Add / Edit vehicles
+        \item Availability management
+    \end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+    \textbf{Booking Module}
+    \begin{itemize}
+        \item Booking lifecycle
+        \item Owner approval system
+    \end{itemize}
+    \vspace{0.2cm}
+    \textbf{Payment Module}
+    \begin{itemize}
+        \item Demo payment simulation
+        \item Transaction status tracking
+    \end{itemize}
+    \vspace{0.2cm}
+    \textbf{Admin Module}
+    \begin{itemize}
+        \item User verification
+        \item System monitoring
+    \end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{User Flow Diagram}
+\begin{center}
+    \includegraphics[width=1\textwidth,height=0.9\textheight,keepaspectratio]{System_Flow.jpeg}
+\end{center}
+\end{frame}
+
+
+
+\section{Database, Results \& Future Scope}
+
+\begin{frame}{Database Design}
+\begin{center}
+    \includegraphics[width=1.3\textwidth,height=0.75\textheight,keepaspectratio]{db_design.jpeg}
+\end{center}
+\end{frame}
+
+\begin{frame}{Technology Stack}
+\begin{columns}[T]
+\begin{column}{0.48\textwidth}
+    \textbf{Frontend}
+    \begin{itemize}
+        \item React.js (UI Library)
+        \item Tailwind CSS (Styling)
+        \item Axios (HTTP Client)
+        \item React Router (Navigation)
+    \end{itemize}
+    \vspace{0.2cm}
+    \textbf{Backend}
+    \begin{itemize}
+        \item Node.js (Runtime)
+        \item Express.js (Web Framework)
+        \item REST API Architecture
+        \item Multer (File Upload)
+    \end{itemize}
+\end{column}
+\begin{column}{0.48\textwidth}
+    \textbf{Security}
+    \begin{itemize}
+        \item JWT (Authentication)
+        \item Google OAuth 2.0
+    \end{itemize}
+    \vspace{0.2cm}
+    \textbf{Database \& Storage}
+    \begin{itemize}
+        \item MongoDB (NoSQL Database)
+        \item Cloudinary (Image CDN)
+    \end{itemize}
+\end{column}
+
+\end{columns}
+\end{frame}
+
+% ==============================
+% MEMBER 3 SECTION
+% ==============================
+
+\begin{frame}{Results Achieved}
+\begin{itemize}
+    \item Secure authentication implemented
+    \item Complete booking workflow functional
+    \item Role-based system operational
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Challenges Faced}
+\begin{itemize}
+    \item OAuth integration issues
+    \item Deployment configuration
+    \item Booking conflict handling
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Future Enhancements}
+\begin{itemize}
+    \item Real payment gateway integration
+    \item Mobile application version
+    \item Rating and review system
+    \item AI-based vehicle recommendation
+\end{itemize}
+\end{frame}
+
+%------------------------------------------------
+\begin{frame}
+    \centering
+    \Huge Thank You \\
+    \vspace{0.5cm}
+    Questions?
+\end{frame}
+%------------------------------------------------
+
+\end{document}
