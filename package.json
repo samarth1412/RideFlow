@@ -10,7 +10,9 @@
     "dev": "concurrently \"npm run dev:backend\" \"npm run start:frontend\" --names \"backend,frontend\" --prefix-colors \"bgBlue.bold,bgMagenta.bold\"",
     "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install",
     "install:backend": "cd backend && npm install",
-    "install:frontend": "cd frontend && npm install"
+    "install:frontend": "cd frontend && npm install",
+    "pack:backend-eb": "powershell -NoProfile -ExecutionPolicy Bypass -File backend/package-for-eb.ps1",
+    "build:frontend": "cd frontend && npm run build"
   },
   "keywords": [
     "vehicle-rental",

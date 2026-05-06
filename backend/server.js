@@ -13,16 +13,27 @@ dotenv.config();
 
 const app = express();
 
+// Behind AWS ELB / CloudFront — correct client IP and secure cookies if you add them later
+app.set('trust proxy', 1);
+
 connectDB();
 
-const User = require('./models/User');
-console.log('🧪 User model loaded:', typeof User.findOne); // Should show "function"
+function corsAllowedOrigin() {
+  const raw = (process.env.FRONTEND_URL || '').trim();
+  if (!raw) {
+    return 'http://localhost:3000';
+  }
+  const origins = raw.split(',').map((s) => s.trim()).filter(Boolean);
+  return origins.length === 1 ? origins[0] : origins;
+}
 
-// Middleware
-app.use(cors({
-  origin: process.env.FRONTEND_URL,
-  credentials: true
-}));
+// Middleware — comma-separated FRONTEND_URL for local + CloudFront during cutover
+app.use(
+  cors({
+    origin: corsAllowedOrigin(),
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

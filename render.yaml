@@ -1,0 +1,57 @@
+# RideFlow — Render Blueprint (https://render.com/docs/infrastructure-as-code)
+#
+# URLs assume global names rideflow-api / rideflow-web → https://rideflow-api.onrender.com etc.
+# If Render renames your services, update FRONTEND_URL on the API and REACT_APP_API_URL on the static site.
+#
+# Deploy: Dashboard → New → Blueprint → connect this GitHub repo → apply; fill prompted secrets.
+
+services:
+  - type: web
+    name: rideflow-api
+    runtime: node
+    region: ohio
+    plan: free
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "20.18.0"
+      - key: USE_ATLAS
+        value: "true"
+      - key: MONGODB_ATLAS_HOST
+        sync: false
+      - key: MONGODB_ATLAS_USERNAME
+        sync: false
+      - key: MONGODB_ATLAS_PASSWORD
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: FRONTEND_URL
+        value: https://rideflow-web.onrender.com
+
+  - type: web
+    name: rideflow-web
+    runtime: static
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: build
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: NODE_VERSION
+        value: "20.18.0"
+      - key: REACT_APP_API_URL
+        value: https://rideflow-api.onrender.com
+      - key: REACT_APP_GOOGLE_CLIENT_ID
+        sync: false
+      - key: REACT_APP_CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: REACT_APP_CLOUDINARY_UPLOAD_PRESET
+        sync: false
