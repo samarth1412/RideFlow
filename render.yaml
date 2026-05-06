@@ -36,7 +36,7 @@ services:
   - type: web
     name: rideflow-web
     runtime: static
-    plan: free
+    # Static sites are free on Render; do not set `plan` (Blueprint rejects plan: free here).
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: build
