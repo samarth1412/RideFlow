@@ -258,56 +258,6 @@ RideFlow maps cleanly onto AWS: **MongoDB Atlas** for data (recommended), **S3 +
 4. Register OAuth origins for CloudFront and API URLs in Google Cloud Console.  
 5. Replace simulated wallet infrastructure with a regulated payment provider before accepting real funds.
 
----
-
-## 📈 Scalability Improvements
-
-Planned production-scale enhancements:
-
-- Redis caching for hot reads and session-adjacent data  
-- WebSocket-based real-time notifications  
-- Queue-backed async jobs (e.g. BullMQ)  
-- Dockerized services and repeatable environments  
-- Kubernetes orchestration for multi-service scale-out  
-- CI/CD with GitHub Actions  
-- Distributed booking and payment event processing  
-- Payment gateway integration (e.g. Stripe)  
-- Observability with Prometheus / Grafana  
-
----
-
-## 📸 Screenshots
-
-Add captures under `screenshots/` and ensure filenames match (or update paths).
-
-### Landing Page
-
-![Landing](./screenshots/landing.png)
-
-### Vehicle browsing
-
-![Vehicles](./screenshots/dashboard.png)
-
-### Booking flow
-
-![Booking](./screenshots/booking.png)
-
-### Simulated wallet / transactions
-
-![Wallet](./screenshots/wallet.png)
-
----
-
-## Repository layout
-
-```
-rideflow/
-├── backend/       Express API, Mongoose models, middleware
-├── frontend/      React SPA
-└── Documentation/ Extended references (optional)
-```
-
-Deep dives: [`Documentation/`](Documentation/).
 
 ---
 
